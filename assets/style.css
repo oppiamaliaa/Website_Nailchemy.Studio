@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syne:wght@700;800&display=swap');
+
+/* GLOBAL STYLES */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e1f5fe 100%); 
+    background-attachment: fixed;
+    color: #4a148c; 
+    overflow-x: hidden; 
+}
+
+/* NAVIGATION */
+nav { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+nav ul { display: flex; justify-content: center; list-style: none; padding: 20px; }
+nav a { text-decoration: none; font-family: 'Syne', sans-serif; color: #7c3aed; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin: 0 15px; transition: 0.3s; }
+
+/* JUMBOTRON */
+.jumbotron { text-align: center; padding: 80px 20px; }
+.jumbotron h1 { 
+    font-family: 'Syne', sans-serif; 
+    font-size: clamp(2.5rem, 10vw, 4.5rem); 
+    font-weight: 800; 
+    letter-spacing: -3px; 
+    line-height: 1; 
+    background: linear-gradient(90deg, #ec407a, #ab47bc, #42a5f5, #ec407a);
+    background-size: 200% auto;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: shine 4s linear infinite, floating 3s ease-in-out infinite; 
+}
+@keyframes shine { to { background-position: 200% center; } }
+@keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+
+/* LAYOUT & CARDS */
+main { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.card { 
+    background: rgba(255, 255, 255, 0.65); 
+    backdrop-filter: blur(20px); 
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 40px; 
+    padding: 40px; 
+    margin-bottom: 40px; 
+    box-shadow: 0 20px 40px rgba(171, 71, 188, 0.1); 
+}
+
+h2 { font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #7c3aed; border-left: 6px solid #db2777; padding-left: 20px; margin-bottom: 20px; }
+
+/* PRICELIST GRID */
+.pricelist-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 25px; 
+    justify-content: center;
+}
+.pricelist-img { 
+    flex: 1;
+    min-width: 300px; 
+    height: auto; 
+    max-width: 480px;
+    border-radius: 25px; 
+    border: 5px solid white; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* GALLERY */
+.gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.gallery-img { width: 100%; height: 320px; object-fit: cover; border-radius: 25px; border: 5px solid white; transition: 0.4s ease; }
+.gallery-img:hover { transform: translateY(-10px); }
+
+/* FEATURED ART */
+.featured-art-container { display: flex; align-items: center; gap: 30px; }
+.featured-img { width: 50%; border-radius: 20px; border: 6px solid white; }
+.featured-desc { width: 50%; color: #4c1d95; }
+
+/* CONNECTION */
+.connect-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; }
+
+/* FIX TOMBOL GAK MELEBAR */
+.featured-booking { 
+    background: linear-gradient(135deg, rgba(219, 39, 119, 0.1), rgba(123, 31, 162, 0.1)); 
+    padding: 35px; 
+    border-radius: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.social-btn { 
+    display: inline-block; 
+    width: auto;
+    min-width: 220px;
+    max-width: 300px;
+    margin-top: 20px; 
+    padding: 12px 35px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-family: 'Syne', sans-serif; 
+    font-weight: 800; 
+    background: linear-gradient(45deg, #f472b6, #a78bfa, #60a5fa); 
+    color: white; 
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(167, 139, 250, 0.3);
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(167, 139, 250, 0.5);
+    filter: brightness(1.1);
+}
+
+/* ASIDE FIX */
+.aside-layout { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 40px; 
+    justify-content: center;
+    text-align: center; 
+}
+.aside-section { flex: 1; min-width: 300px; }
+.studio-img { width: 100%; border-radius: 25px; border: 4px solid white; margin-bottom: 20px; }
+.profile-img { 
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
+    border: 5px solid white; margin-bottom: 15px;
+    animation: pulse-glow 3s infinite; 
+}
+@keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(219, 39, 119, 0); } 100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); } }
+
+/* BRAND LOGO - Diperbesar agar area tidak kosong */
+.brand-logo {
+    width: 100%;
+    max-width: 240px; /* Diperbesar dari 180px ke 240px */
+    height: auto;
+    margin-top: 35px; /* Jarak atas ditambah sedikit agar lebih lega */
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 15px 25px rgba(124, 58, 237, 0.15)); /* Shadow diperkuat */
+}
+
+.brand-logo:hover {
+    transform: scale(1.08) rotate(-2deg); /* Animasi hover tetap catchy */
+}
+
+.owner-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; color: #db2777; margin-top: 15px; text-transform: uppercase; }
+.bio-text { font-size: 0.9rem; line-height: 1.7; color: #4a148c; margin-bottom: 5px; }
+
+footer { text-align: center; padding: 60px; color: #7c3aed; font-size: 0.8rem; }
+
+@media screen and (max-width: 768px) {
+    .featured-art-container { flex-direction: column; }
+    .featured-img, .featured-desc { width: 100%; }
+}
