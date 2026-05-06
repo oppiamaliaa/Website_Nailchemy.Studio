@@ -18,14 +18,14 @@
                 <li><a href="#pricelist">Investment</a></li>
                 <li><a href="#connect">Connect</a></li>
                 <!-- KRITERIA: Link Profil Dicoding -->
-                <li><a href="https://www.dicoding.com/users/oppiamaliaa" target="_blank" class="nav-cta">Director's Profile</a></li>
+                <li><a href="https://www.dicoding.com/users/oppiamaliaa" target="_blank" class="nav-cta">Owner's Profile</a></li>
             </ul>
         </nav>
 
         <div class="jumbotron">
             <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
                 <h1>NAILCHEMY<br>STUDIO</h1>
-                <p class="tagline">WHERE ARTISTRY MEETS PRECISION</p>
+                <p class="tagline" data-aos="fade-up" data-aos-delay="200">WHERE ARTISTRY MEETS PRECISION</p>
             </div>
         </div>
     </header>
@@ -60,6 +60,7 @@
                 <img src="assets/6.jpg" alt="Artisan Design 6" class="gallery-img" data-aos="flip-left" data-aos-delay="600">
                 <img src="assets/7.jpg" alt="Artisan Design 7" class="gallery-img" data-aos="flip-left" data-aos-delay="700">
                 <img src="assets/8.jpg" alt="Artisan Design 8" class="gallery-img" data-aos="flip-left" data-aos-delay="800">
+                <img src="assets/9.jpg" alt="Artisan Design 9" class="gallery-img" data-aos="flip-left" data-aos-delay="900">
             </div>
 
             <div class="featured-section" data-aos="zoom-in-up">
@@ -92,12 +93,12 @@
                 <div class="connect-item" data-aos="fade-up">
                     <h3>Atelier Location</h3>
                     <p>Yogyakarta, Indonesia</p>
-                    <a href="https://maps.app.goo.gl/gTuMG3aadFb5fcy69" target="_blank" class="text-link">Open in Google Maps →</a>
+                    <a href="https://maps.app.goo.gl/gTuMG3aadFb5fcy69" target="_blank" class="text-link" id="maps-link">Open in Google Maps →</a>
                 </div>
                 <div class="connect-item featured-booking" data-aos="flip-up">
                     <h3>Ready for Alchemy?</h3>
                     <p>Transform your nails into a masterpiece. Book via Instagram DM.</p>
-                    <a href="https://www.instagram.com/nailchemystudio_?" target="_blank" class="social-btn ig-btn">Book via Instagram</a>
+                    <a href="https://www.instagram.com/nailchemystudio_?" target="_blank" class="social-btn ig-btn" id="instagram-link">Book via Instagram</a>
                 </div>
             </div>
         </article>
@@ -130,6 +131,18 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 1000, once: true });
+
+      const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent || navigator.vendor || window.opera);
+      if (isMobile) {
+        const igLink = document.getElementById('instagram-link');
+        const mapsLink = document.getElementById('maps-link');
+        if (igLink) {
+          igLink.setAttribute('href', 'instagram://user?username=nailchemystudio_');
+        }
+        if (mapsLink) {
+          mapsLink.setAttribute('href', 'geo:0,0?q=Yogyakarta+Indonesia');
+        }
+      }
     </script>
 </body>
 </html>
